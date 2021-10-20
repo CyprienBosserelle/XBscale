@@ -1,0 +1,92 @@
+################################################################################
+### XBGPU parameter settings input file                                     ###
+###                                                                          ###
+###                                                                          ###
+###                                                                          ###
+################################################################################
+
+GPUDEVICE  = 0
+flow=1
+swave=1
+
+
+##############################
+
+### Grid parameters ############################################################
+
+depfile   = ./bathy/bathy-new.dep;
+posdown    = 0;
+nx        = 624;
+ny        = 240;
+grdalfa   = 0;
+
+dx        = 10;
+
+thetamin  = -90;
+thetamax  = 90;
+dtheta    = 20;
+thetanaut = 1;
+
+### Flow parameters ############################################################
+
+hmin       = 0.05
+eps	   = 0.01
+cf         = 0.01;
+nuhfac     = 0.1;
+usesmago   = 1; #if 1 then smag = nuh if smag not specified
+smag       = 0.25;
+CFL = 0.5
+
+### Initial conditions #########################################################
+
+slbndfile  = tide.dat;
+
+### Model time #################################################################
+
+### Roller parameters ##########################################################
+
+roller     = 1
+beta       = 0.15
+
+### Wave boundary condition parameters #########################################
+
+wavebndtype = 4; #= jons
+
+### Wave-spectrum boundary condition parameters ################################
+
+wavebndfile = bndwave.txt
+rtlength    = 3600
+dtbc      = 1
+
+### Wave breaking parameters ###################################################
+
+#breakmodel = 1; #roelvink:1 baldock:2 
+gamma      = 0.55
+#gamma2     = 0.3
+alpha      = 1
+n          = 10
+gammax     = 2
+#delta      = 0.2
+fw         = 0.25
+
+
+
+### Wave-current interaction parameters ########################################
+
+wci         = 0.500000
+hwci        = 0.250000
+#cats       = 1
+
+### Wind condition ########################################
+
+#windbndfile = wndfile.dat
+#Cd = 0.002
+### Output variables ###########################################################
+
+#outputformat = netcdf
+outfile = test_07.nc
+outvars = zb, zs, H,uu,vv,Hmax,zsmax,ueumean,vevmean
+
+endtime = 3600.
+outputtimestep = 600.0
+

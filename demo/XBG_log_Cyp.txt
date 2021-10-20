@@ -1,0 +1,134 @@
+#################################
+XBeach_GPU v0.0
+#################################
+model started at 20-10-2021 13:33:26
+bathy: ./bathy/bathy-new.dep
+bathy extension: dep
+Reading dep file
+For this type of bathy file please specify nx, ny, dx and grdalpha in the XBG_param.txt
+nx=624 ny=240 dx=10.000000 grdalpha=0.000000
+Opening sea level bnd...
+done
+Opening wind forcing...
+No wind file was specified. Setting wind forcing to zero...
+done
+Reading wave forcing...
+done
+Read bathy data...
+Set initial condition...
+...done
+No hard layer file found, Model will run with constant sediment thickness
+There are 1GPU devices on this machine
+There are Quadro P620GPU devices on this machine
+ntheta=9	 dtheta=0.349066
+Generating initial wave bnd data
+Generating JONSWAP spectrum: Hs=1.000000 Tp=15.800000 Dp=-0.013963 gam=3.300000 s=800.000000;
+Generating Boundary condition: Energy from wave group and Long bound waves
+Wave energy outside computational domain at offshore boundary: 0.000000%
+Allocating GPU memory
+gridDim= 39,15,1
+Initial timestep: dt=0.076806
+prepare output
+...done
+#################################
+XBeach_GPU Parameters:
+#################################
+# Bathymetry file
+bathy = ./bathy/bathy-new.dep;
+nx = 624;
+ny = 240;
+dx = 10.000000;
+grdalpha = 0.000000;
+
+
+# Model controls
+swave = 1;
+flow = 1;
+sedtrans = 0;
+morphology = 0;
+gpudevice = 0;
+
+
+# Flow parameters
+eps = 0.010000;
+cfsand = 0.010000;
+cfreef = 0.010000;
+usesmago = 1;
+smag = 0.250000;
+nuhfac = 0.100000;
+lat = 0.000000;
+fc = 0.000000;
+Cd = 0.002000;
+wci = 0.500000;
+hwci = 0.250000;
+
+
+# Waves parameters
+breakmodel = 1;
+gamma = 0.550000;
+n = 10.000000;
+alpha = 1.000000;
+gammax = 2.000000;
+beta = 0.150000;
+fwsand = 0.250000;
+fwreef = 0.250000;
+roller = 1;
+thetamin = -1.570796;
+thetamax = 1.570796;
+dtheta = 0.349066; 
+ntheta = 9; 
+
+
+# Wave boundary parameters
+dtbc = 1.000000; 
+rtlength = 3600.000000; 
+sprdthr = 0.080000; 
+random = 0; 
+
+
+# Sediment parameters
+D50 = 0.000380;
+D90 = 0.000530;
+rhosed = 2650.000000;
+wws = 0.050900;
+drydzmax = 1.000000;
+wetdzmax = 0.300000;
+maxslpchg = 0.010000;
+por = 0.400000;
+morfac = 1.000000;
+sus = 1.000000;
+bed = 1.000000;
+facsk = 0.200000;
+facas = 0.200000;
+
+
+# Timekeeping parameters
+CFL = 0.500000;
+sedstart = 3600.000000;
+outputtimestep = 600.000000;
+outvars = zb, zs, H, uu, vv, zsmax, ueumean, vevmean;
+endtime = 3000.000000;
+
+
+# Files
+outfile = test_07.nc;
+SedThkfile = ;
+wavebndfile = bndwave.txt;
+wavebndtype = 4;
+slbndfile = tide.dat;
+windbndfile = ;
+
+
+# Others
+g = 9.810000;
+rho = 1025.000000;
+#################################
+Starting Computation 
+Writing outputs, totaltime: 600.000000, Mean dt= 0.153492
+Writing outputs, totaltime: 1200.000000, Mean dt= 0.153531
+Writing outputs, totaltime: 1800.000000, Mean dt= 0.153531
+Writing outputs, totaltime: 2400.000000, Mean dt= 0.153531
+Writing outputs, totaltime: 3000.000000, Mean dt= 0.153531
+End Computation
+#################################
+Total runtime= 363 seconds
